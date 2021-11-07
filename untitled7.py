@@ -1,5 +1,6 @@
 import streamlit as st
 import speech_recognition as sr
+from pydub import AudioSegment
 st.title("Speech to text converter")
 st.header("Browse a file or start recording")
 col1,col2 = st.columns(2)
