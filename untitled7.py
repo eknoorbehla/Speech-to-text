@@ -4,11 +4,11 @@ from pydub import AudioSegment
 st.title("Speech to text converter")
 st.header("Browse a file or start recording")
 col1,col2 = st.columns(2)
-option=col1.button("Record")
-option=col2.button("Browse file")
+option1=col1.button("Record")
+option2=col2.button("Browse file")
 browse=True
 r = sr.Recognizer()
-if option=="Browse":
+if option1==True:
     filename = st.file_uploader("Upload Files",type=['wav','mp4'])
     if filename is None:
         st.write("Please upload a file")
