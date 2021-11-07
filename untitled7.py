@@ -8,7 +8,6 @@ browse=col2.button("Browse file")
 r = sr.Recognizer()
 if browse==True:
     flag=False
-    filename = st.file_uploader("Upload Files",type=['wav','mp4'])
     while not flag:
          if filename is not None:
                 flag = True
