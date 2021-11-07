@@ -8,6 +8,7 @@ browse=col2.button("Browse file")
 r = sr.Recognizer()
 if browse==True:
     filename = st.file_uploader("Upload Files",type=['wav','mp4'])
+    st.write(filename)
     if filename is not None:
         st.write("Done")
         with sr.AudioFile(filename) as source:
