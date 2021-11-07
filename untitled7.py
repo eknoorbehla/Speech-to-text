@@ -5,6 +5,7 @@ st.header("Browse a file or start recording")
 col1,col2 = st.columns(2)
 rec=col1.button("Record")
 browse=col2.button("Browse file")
+browse=True
 r = sr.Recognizer()
 if browse==True:
     filename = st.file_uploader("Upload Files",type=['wav','mp4'])
@@ -14,11 +15,9 @@ if browse==True:
     else:
         st.write("ghfjhf")
         filename = AudioSegment.from_wav(filename)
-        wav.export("extracted.wav",format="wav")
-        audio_bytes = open("extracted.wav",'rb').read()
-        st.write("#### input sound:")
-        st.audio(audio_bytes,format = f'audio/sav',start_time=0)
-        with sr.AudioFile(audio_bytes) as source:
+        filename.export("extracted.wav",format="wav")
+        filename="extracted.wav"
+        with sr.AudioFile(filename) as source:
              st.write("Done")
              audio_data = r.record(source)
              text = r.recognize_google(audio_data)
