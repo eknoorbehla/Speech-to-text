@@ -7,8 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/12QBrFOXsoIxC-zt1xl2pWxecQGRKqjyC
 """
 
-import streamlit as st
-
 import speech_recognition as sr
 r = sr.Recognizer()
 filename="Welcome.wav"
