@@ -19,5 +19,6 @@ if browse==True:
         with sr.AudioFile(filename) as source:
              audio_data = r.record(source)
              text = r.recognize_google(audio_data)
-             st.write(text)
+             st.write("Your text")
+             st.success(text)
 
