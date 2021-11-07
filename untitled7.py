@@ -9,9 +9,9 @@ r = sr.Recognizer()
 if browse==True:
     flag=False
     while not flag:
+         filename = st.file_uploader("Upload Files",type=['wav','mp4'])
          if filename is not None:
                 flag = True
-         filename = st.file_uploader("Upload Files",type=['wav','mp4'])
     st.write(filename)
     if filename is not None:
         with sr.AudioFile(filename) as source:
