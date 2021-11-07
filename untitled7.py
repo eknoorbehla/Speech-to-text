@@ -10,17 +10,14 @@ browse=True
 r = sr.Recognizer()
 if browse==True:
     filename = st.file_uploader("Upload Files",type=['wav','mp4'])
-    st.write(filename)
     if filename is None:
         st.write("Please upload a file")
     else:
-        st.write("ghfjhf")
         filename = AudioSegment.from_wav(filename)
         filename.export("extracted.wav",format="wav")
         filename="extracted.wav"
         with sr.AudioFile(filename) as source:
-             st.write("Done")
              audio_data = r.record(source)
              text = r.recognize_google(audio_data)
              st.write(text)
-st.write("Hello")
+
