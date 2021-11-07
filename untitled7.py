@@ -7,13 +7,9 @@ rec=col1.button("Record")
 browse=col2.button("Browse file")
 r = sr.Recognizer()
 if browse==True:
-    flag=False
-    while not flag:
-         filename = st.file_uploader("Upload Files",type=['wav','mp4'])
-         if filename is not None:
-                flag = True
-    st.write(filename)
+    filename = st.file_uploader("Upload Files",type=['wav','mp4'])
     if filename is not None:
+        st.write("Done")
         with sr.AudioFile(filename) as source:
              st.write("Done")
              audio_data = r.record(source)
