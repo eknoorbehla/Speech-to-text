@@ -14,8 +14,11 @@ if browse==True:
         filename = AudioSegment.from_wav(filename)
         wav.export("extracted.wav",format="wav")
         audio_bytes = open("extracted.wav",'rb').read()
-        with sr.AudioFile(extracted.wav) as source:
+        st.write("#### input sound:")
+        st.audio(audio_bytes,format = f'audio/sav',start_time=0)
+        with sr.AudioFile(audio_bytes) as source:
              st.write("Done")
              audio_data = r.record(source)
              text = r.recognize_google(audio_data)
              st.write(text)
+st.write("Hello")
