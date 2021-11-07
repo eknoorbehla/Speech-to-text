@@ -8,7 +8,7 @@ option1=col1.button("Record")
 option2=col2.button("Browse file")
 browse=True
 r = sr.Recognizer()
-if option1==True:
+if browse==True:
     filename = st.file_uploader("Upload Files",type=['wav','mp4'])
     if filename is None:
         st.write("Please upload a file")
