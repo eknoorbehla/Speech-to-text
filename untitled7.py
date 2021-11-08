@@ -7,7 +7,7 @@ st.header("Browse an audio file to convert")
 r = sr.Recognizer()
 filename = st.file_uploader("Upload Files",type=['wav','mp4'])
 if filename is None:
-    st.write("Please upload a file")
+    st.subheader("Please upload a file")
 else:
     filename = AudioSegment.from_wav(filename)
     filename.export("extracted.wav",format="wav")
