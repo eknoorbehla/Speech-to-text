@@ -1,8 +1,6 @@
 import streamlit as st
 import speech_recognition as sr
 from pydub import AudioSegment
-import sounddevice as sd
-from scipy.io.wavfile import write
 
 st.title("Speech to text converter")
 st.header("Browse a file or start recording")
@@ -23,13 +21,9 @@ if option=="Browse file":
              st.write("Your text")
              st.success(text)
 elif option=="Record":
-    freq = 44100
-    duration = 5
-    recording = sd.rec(int(duration * freq), 
-                   samplerate=freq, channels=2)
-    sd.wait()
-    write("recording0.wav", freq, recording)
-    wf="recording0.wav"
+    wav = AudioSegment.from_wav(file)
+    wav.export("extracted.wav", format='wav')
+    filename="extracted.wav"
     with sr.AudioFile(wf) as source:
              audio_data = r.record(source)
              text = r.recognize_google(audio_data)
