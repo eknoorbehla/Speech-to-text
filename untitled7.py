@@ -2,8 +2,8 @@ import streamlit as st
 import speech_recognition as sr
 from pydub import AudioSegment
 
-st.title("Speech to text converter")
-st.header("Browse a file to Convert")
+st.title("SPEECH TO TEXT CONVERTER")
+st.header("Browse an audio file to convert")
 r = sr.Recognizer()
 filename = st.file_uploader("Upload Files",type=['wav','mp4'])
 if filename is None:
