@@ -11,16 +11,21 @@ Link - https://share.streamlit.io/eknoorbehla/speech-to-text/main/untitled7.py
 # Description
 
 User provides an audio file and it is converted to audio using Speech Recognition library in Python.
+
 Project is deployed using streamlit.
 
 # Technologies Used
 
 Streamlit
+
 Python
+
 Speech Recognition Library
 
 # Author
 
 Eknoor Kaur
+
 101803169
+
 COE9
